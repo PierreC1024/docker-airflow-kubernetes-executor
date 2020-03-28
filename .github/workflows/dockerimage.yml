@@ -14,5 +14,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Docker login
+      run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag docker-airflow-kubernetes-executor:1.10.9
+    - name: Push the Docker image
+      run: docker push docker-airflow-kubernetes-executor:1.10.9
