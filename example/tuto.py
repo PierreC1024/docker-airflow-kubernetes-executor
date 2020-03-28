@@ -20,6 +20,7 @@ default_args = {
     # 'pool': 'backfill',
     # 'priority_weight': 10,
     # 'end_date': datetime(2016, 1, 1),
+    "catchUp": False,
 }
 
 dag = DAG("tutorial", default_args=default_args, schedule_interval=timedelta(1))
