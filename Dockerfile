@@ -14,5 +14,7 @@ RUN pip install airflow-exporter==1.3.0
 USER airflow
 WORKDIR ${AIRFLOW_HOME}
 
+COPY example/tuto.py dags/tuto.py
+
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["webserver"]
